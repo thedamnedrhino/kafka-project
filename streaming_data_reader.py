@@ -44,5 +44,3 @@ for msg in consumer:
                            'type':  vehicle_type,
                            'plaza': plaza_id})
     print(f"A {vehicle_type} was inserted into the database")
-    connection.commit()
-connection.close()
