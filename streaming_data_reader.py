@@ -1,5 +1,8 @@
 """
 Streaming data consumer
+-------
+Reads data from the topic `tolldata` and
+    inserts them to the table `kafkda_tolldata` in the db.
 """
 from datetime import datetime
 from kafka import KafkaConsumer
@@ -12,6 +15,7 @@ PASSWORD = ''
 
 print("Connecting to the database")
 try:
+    # -- a minimal setting to write data
     db = Postgres(f'postgres://{USERNAME}@localhost/{DATABASE}')
     db.run('SELECT 1 FROM livetolldata');
 except Exception:
